@@ -1,0 +1,13 @@
+button.btn-left.btn-right {
+    width: 15%;
+    /* height: 15vh; */
+    /* background-color: red; */
+}
+
+.btn-left {
+    order: 1;
+}
+
+.btn-right {
+    order: 3;
+}

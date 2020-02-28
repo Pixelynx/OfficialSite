@@ -1,0 +1,14 @@
+.cont-cont{
+    display: flex;
+    order: 2;
+    height: 70vh;
+    width: 50%;
+}
+.proj-img-main {
+    background-color: orange;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100%;
+    background-image: url('../imgs/DiffRent_HomePage.png');
+}

@@ -1,0 +1,15 @@
+.contact-icons {
+    text-align: end;
+}
+
+.hdr-cont {
+    text-align: center;
+    height: 20vh;
+}
+
+.centered-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}

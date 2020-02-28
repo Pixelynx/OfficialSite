@@ -1,0 +1,44 @@
+.about-me {
+  order: 2;
+  height: 50vh;
+  width: 30%;
+  font-size: 1.5em; }
+
+.stack-carousel {
+  background-color: red;
+  height: 25vh; }
+
+button.btn-left, .btn-right {
+  width: 15%;
+  height: 15vh; }
+
+.btn-left {
+  order: 1; }
+
+.btn-right {
+  order: 3; }
+
+.cont-cont {
+  display: flex;
+  order: 2;
+  height: 70vh;
+  width: 50%; }
+
+.proj-img-main {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  background-image: url("~DiffRent_HomePage.png"); }
+
+.contact-icons {
+  text-align: end; }
+
+.hdr-cont {
+  text-align: center;
+  height: 20vh; }
+
+.centered-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly; }
