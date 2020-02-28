@@ -11,3 +11,17 @@ button.btn-left.btn-right {
 .btn-right {
     order: 3;
 }
+
+.contact-cont>a {
+    padding: 0% .5%;
+}
+
+#twitter-icon>img {
+    width: 3em;
+    margin-top: -15%;
+}
+
+.contact-cont>a>p>img {
+    width: 2em;
+    
+}

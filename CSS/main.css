@@ -1,5 +1,7 @@
-.contact-icons {
-    text-align: end;
+.contact-cont {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
 }
 
 .hdr-cont {
