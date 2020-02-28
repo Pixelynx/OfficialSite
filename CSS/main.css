@@ -1,7 +1,7 @@
 .contact-cont {
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
     margin-right: 1%;
+    right: 0;
 }
 
 .hdr-cont {
