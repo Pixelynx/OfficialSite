@@ -5,8 +5,28 @@
     font-size: 1.5em;
 }
 
-.stack-carousel {
-    background-color: red;
+button#caro-prev-btn {
+    /* place-self: stretch flex-start; */
+}
+
+button#caro-next-btn,#caro-prev-btn {
+    width: 5em;
+}
+
+.tech-carousel-inner>p>img {
+    width: 13em;
+}
+
+.tech-carousel {
+    display: flex;
+    background-color: pink;
+}
+
+.tech-carousel-inner {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: black;
     height: 30vh;
 }
 
