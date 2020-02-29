@@ -12,6 +12,12 @@ button.btn-left.btn-right {
     order: 3;
 }
 
+#twitter-icon,#gmail-icon {
+    margin-top: -25%;
+}
+
 .contact-cont>a>p>img {
-    width: 2em;   
+    width: 2em;  
+    opacity: 30%; 
+    margin-top: 0px;
 }
