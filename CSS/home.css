@@ -5,28 +5,50 @@
     font-size: 1.5em;
 }
 
-button#caro-prev-btn {
-    /* place-self: stretch flex-start; */
-}
-
 button#caro-next-btn,#caro-prev-btn {
     width: 5em;
+    position: absolute;
 }
 
-.tech-carousel-inner>p>img {
-    width: 13em;
+button#caro-prev-btn {
+    left: 5%;
+}
+
+button#caro-next-btn {
+    right: 0%;
 }
 
 .tech-carousel {
-    display: flex;
+    /* display: flex; */
+    height: 30vh;
     background-color: pink;
 }
 
 .tech-carousel-inner {
-    display: flex;
-    justify-content: space-evenly;
     width: 100%;
+    overflow: hidden;
+}
+
+.f-end-tech {
+
+}
+
+.tech-carousel-inner>div {
+    position: absolute;
+    display: inline-block;
+    /* justify-content: space-evenly; */
     background-color: black;
     height: 30vh;
+    width: 100%;
 }
+
+.tech-carousel-inner>div>p {
+    float: left;
+}
+
+.tech-carousel-inner>div>p>img {
+    width: 10em;
+}
+
+
 
