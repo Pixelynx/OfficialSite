@@ -19,7 +19,6 @@ button#caro-next-btn {
 }
 
 .tech-carousel {
-    /* display: flex; */
     height: 30vh;
     background-color: pink;
 }
@@ -36,7 +35,6 @@ button#caro-next-btn {
 .tech-carousel-inner>div {
     position: absolute;
     display: inline-block;
-    /* justify-content: space-evenly; */
     background-color: black;
     height: 30vh;
     width: 100%;
