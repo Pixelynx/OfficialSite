@@ -5,25 +5,25 @@
     font-size: 1.5em;
 }
 
-button#caro-next-btn,#caro-prev-btn {
+button#slide-next-btn,#slide-prev-btn {
     width: 5em;
     position: absolute;
 }
 
-button#caro-prev-btn {
+button#slide-prev-btn {
     left: 5%;
 }
 
-button#caro-next-btn {
+button#slide-next-btn {
     right: 0%;
 }
 
-.tech-carousel {
+.tech-slider {
     height: 30vh;
     background-color: pink;
 }
 
-.tech-carousel-inner {
+.tech-slider-inner {
     width: 100%;
     overflow: hidden;
 }
@@ -32,7 +32,7 @@ button#caro-next-btn {
 
 }
 
-.tech-carousel-inner>div {
+.tech-slider-inner>div {
     position: absolute;
     display: inline-block;
     background-color: black;
@@ -40,11 +40,11 @@ button#caro-next-btn {
     width: 100%;
 }
 
-.tech-carousel-inner>div>p {
+.tech-slider-inner>div>p {
     float: left;
 }
 
-.tech-carousel-inner>div>p>img {
+.tech-slider-inner>div>p>img {
     width: 10em;
 }
 
