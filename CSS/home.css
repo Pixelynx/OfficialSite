@@ -7,18 +7,18 @@
     font-size: 1.1em;
 }
 
-button#slide-next-btn,#slide-prev-btn {
+button#TS-next-btn,#TS-prev-btn {
     width: 5em;
     height: 30vh;
     z-index: 10;
     position: absolute;
 }
 
-button#slide-prev-btn {
+button#TS-prev-btn {
     left: .4%;
 }
 
-button#slide-next-btn {
+button#TS-next-btn {
     top: 69.1%;
     right: .4%;
 }
