@@ -165,6 +165,7 @@
             if (right !== 0){animateDistance += right;}
         }
 
+        
         // recursive auto-slide loop
         function autoSlide() {
             autoSlideInterval = setInterval(function(){
