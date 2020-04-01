@@ -13,7 +13,10 @@
 
       // ==== VARIABLES ==== //
       let animateSlideNext,
-         animateSlidePrev;
+         animateSlidePrev,
+         defaults,
+         settings,
+         animateDuration;
 
       // === DETERMINE ACTION ====
       // string = method | object or nothing is to initialize
@@ -26,6 +29,8 @@
 
       // ==== INITIALIZE ==== //
       function init() {
+         createSettings();       // merge defaults and user provided options
+         // saveData();
          selectAnimation();
       };
 
@@ -52,6 +57,20 @@
             callback();    //callback is animation
          }
       };
+
+      // updated options with defaults, measure slide widths for animation calculations, carry out setting implementations
+      function createSettings() {
+         defaults = settings || {
+            continuous: false,	// endless scrolling with no pauses
+            slideAll: false,	// slide all visible slides, or just one at a time
+            interval: 2000,		// time bewteen slide animation, 0 or 'false' prevents auto-sliding
+            duration: 500	    // duration of slide animation
+         }
+         settings = $.extend({}, defaults, data);
+
+         animateDuration = settings.duration;
+
+      }
 
       function selectAnimation() {
          animateSlideNext = $techslider.data('prev');
