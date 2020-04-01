@@ -1,8 +1,8 @@
-(function($) {
+(function ($) {
 
 
    // ==== BEGINS PLUGGIN ==== //
-   $.fn.techslider = function(data, callback) {
+   $.fn.techslider = function (data, callback) {
 
       // ==== CACHE DOM ==== //
       let $techslider = $(this);
@@ -19,7 +19,7 @@
       // string = method | object or nothing is to initialize
       if (typeof data === 'string') {
          getStringArgs(data);
-         return $multislider;
+         return $techslider;
       } else if (typeof data === 'object' || typeof data === 'undefined') {
          init();
       };
