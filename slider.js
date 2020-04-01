@@ -30,7 +30,7 @@
       // ==== INITIALIZE ==== //
       function init() {
          createSettings();       // merge defaults and user provided options
-         // saveData();
+         saveData();
          selectAnimation();
       };
 
@@ -48,6 +48,15 @@
          } else {
             console.error("Techslider currently only accepts the following methods: next, prev")
          }
+      }
+
+      // saves data object to DOM element
+      function saveData() {
+         $techslider.data({
+            "next": function () { },
+            "prev": function () { prevOne(); },
+            "settings": settings
+         });
       }
 
       function isItAnimating(callback) {
@@ -77,7 +86,7 @@
          animateSlidePrev = $techslider.data('next');
       };
 
-      function slideLeft() {
+      function prevOne() {
          isItAnimating(function () {
             // reTargetSlides();
             $imgCurrent.animate(
