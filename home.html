@@ -8,8 +8,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/home.css">
     <link rel="stylesheet" type="text/css" href="CSS/proj-hob-home-btns.css">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="slider.js"></script>
+
     <title>TJStevens | Software Engineer</title>
 </head>
 
@@ -59,23 +58,23 @@
         </div>
 
         <div class="tech-slider">
-            <div class="tech-slider-inner">
+            <div class="TS-content tech-slider-inner">
 
                 <button id="TS-prev-btn"> ◀ </button>
 
-                <div id="f-end-tech" class="TS-content active">
+                <div id="f-end-tech" class="active">
                     <p><img src="./imgs/HTML5_Badge.png" alt="HTML5 Logo" /></p>
                     <p><img src="./imgs/CSS3_badge.png" alt="CSS3 Logo" /></p>
                     <p><img src="./imgs/JavaScript-logo.png" alt="JavaScript Logo" /></p>
                 </div>
 
-                <div id="b-end-tech" class="TS-content hide">
+                <div id="b-end-tech" class="hide">
                     <p><img src="./imgs/CSS3_badge.png" alt="CSS3 Logo" /></p>
                     <p><img src="./imgs/HTML5_Badge.png" alt="HTML5 Logo" /></p>
                     <p><img src="./imgs/JavaScript-logo.png" alt="JavaScript Logo" /></p>
                 </div>
 
-                <div id="design-tech" class="TS-content hide">
+                <div id="design-tech" class="hide">
                     <p><img src="./imgs/HTML5_Badge.png" alt="HTML5 Logo" /></p>
                     <p><img src="./imgs/JavaScript-logo.png" alt="JavaScript Logo" /></p>
                     <p><img src="./imgs/CSS3_badge.png" alt="CSS3 Logo" /></p>
@@ -89,6 +88,13 @@
 
 </body>
 
-<script type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="slider.js"></script>
+<script>
+    $('.tech-slider').techslider({
+        duration: 750,
+        interval: 3000
+    });
+</script>
 
 </html>
