@@ -9,7 +9,7 @@
       let $tsContent = $techslider.find('.TS-content');
       let $tsNext = $techslider.find('button#TS-next-btn');
       let $tsPrev = $techslider.find('button#TS-prev-btn');
-      let $imgCurrent = $tsContent.find('.active');
+      let $imgFirst = $tsContent.find('.slide:first');
 
       // ==== VARIABLES ==== //
       let $imgLast,
@@ -65,6 +65,12 @@
          console.log('saveData: ', settings)
       }
 
+      // target first and last visible slides before each new animation
+      function retargetSlides() {
+         $imgFirst = $tsContent.find('.item:first');
+         $imgLast = $tsContent.find('.item:last');
+      }
+
       function isItAnimating(callback) {
          if (!$techslider.hasClass('active')) {
             //   $techslider.trigger('ms.before.animate'); // event!
@@ -95,15 +101,15 @@
 
       function prevOne() {
          isItAnimating(function () {
-            // reTargetSlides();
-            $imgCurrent.animate(
+            retargetSlides();
+            $imgFirst.animate(
                {
                   marginLeft: "-100px"
                }, {
-               duration: "1s",
+               duration: animateDuration,
                easing: "swing",
                complete: function () {
-                  $imgCurrent.detach().addClass('hide').removeClass('active').appendTo($tsContent);
+                  $imgFirst.detach().addClass('hide').removeClass('active').appendTo($tsContent);
                   // doneAnimating();
                }
             }
@@ -113,18 +119,18 @@
 
       function nextOne() {
          isItAnimating(function () {
-            //  reTargetSlides();
-            $imgLast.css('margin-left', -animateDistance).prependTo($msContent);
+            retargetSlides();
+            $imgLast.css('margin-left', "-100px").prependTo($tsContent);
             $imgLast.animate(
                {
                   marginLeft: 0
                }, {
                duration: animateDuration,
                easing: "swing",
-               // complete: function(){
-               //     $imgLast.removeAttr("style");
-               //     doneAnimating();
-               // }
+               complete: function () {
+                  $imgLast.removeClass('active');
+                  //  doneAnimating();
+               }
             }
             );
          });
