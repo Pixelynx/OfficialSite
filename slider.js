@@ -7,12 +7,13 @@
       // ==== CACHE DOM ==== //
       let $techslider = $(this);
       let $tsContent = $techslider.find('.TS-content');
-      let $tsNext = $techslider.find('button.TS-next-btn');
-      let $tsPrev = $techslider.find('button.MS-prev-btn');
+      let $tsNext = $techslider.find('button#TS-next-btn');
+      let $tsPrev = $techslider.find('button#TS-prev-btn');
       let $imgCurrent = $tsContent.find('.active');
 
       // ==== VARIABLES ==== //
-      let animateSlideNext,
+      let $imgLast,
+         animateSlideNext,
          animateSlidePrev,
          defaults,
          settings,
@@ -21,9 +22,12 @@
       // === DETERMINE ACTION ====
       // string = method | object or nothing is to initialize
       if (typeof data === 'string') {
+         console.log('ACTION -- data === string: ', data)
          getStringArgs(data);
          return $techslider;
       } else if (typeof data === 'object' || typeof data === 'undefined') {
+         console.log('ACTION -- data === object || undefined: ', data)
+
          init();
       };
 
@@ -35,14 +39,15 @@
       };
 
       // ==== EVENT HANDLERS ==== //
-      $tsNext.on('click', animateSlidePrev);
-      $tsPrev.on('click', animateSlideNext);
+      $tsNext.on('click', animateSlideNext);
+      $tsPrev.on('click', animateSlidePrev);
       $techslider.on('click', '.TS-prev-btn, .TS-next-btn');
 
       // ==== FUNCTIONS ==== //
 
       // used if method is called after initialization
       function getStringArgs(str) {
+         console.log('getStringArgs: ', str)
          if (typeof $techslider.data(str) !== 'undefined') {
             $techslider.data(str)();
          } else {
@@ -53,10 +58,11 @@
       // saves data object to DOM element
       function saveData() {
          $techslider.data({
-            "next": function () { },
+            "next": function () { nextOne() },
             "prev": function () { prevOne(); },
             "settings": settings
          });
+         console.log('saveData: ', settings)
       }
 
       function isItAnimating(callback) {
@@ -78,12 +84,13 @@
          settings = $.extend({}, defaults, data);
 
          animateDuration = settings.duration;
-
+         console.log('createSettings -- defaults: ', defaults)
+         console.log('createSettings -- settings: ', settings)
       }
 
       function selectAnimation() {
-         animateSlideNext = $techslider.data('prev');
-         animateSlidePrev = $techslider.data('next');
+         animateSlideNext = $techslider.data('next');
+         animateSlidePrev = $techslider.data('prev');
       };
 
       function prevOne() {
@@ -103,6 +110,25 @@
             );
          });
       };
+
+      function nextOne() {
+         isItAnimating(function () {
+            //  reTargetSlides();
+            $imgLast.css('margin-left', -animateDistance).prependTo($msContent);
+            $imgLast.animate(
+               {
+                  marginLeft: 0
+               }, {
+               duration: animateDuration,
+               easing: "swing",
+               // complete: function(){
+               //     $imgLast.removeAttr("style");
+               //     doneAnimating();
+               // }
+            }
+            );
+         });
+      }
       return $techslider;
    }
 
